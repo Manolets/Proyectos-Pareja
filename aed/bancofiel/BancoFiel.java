@@ -102,7 +102,9 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
   @Override
   public String crearCuenta(String dni, int saldoIncial) {
     Cuenta nueva = new Cuenta(dni, saldoIncial);
-    cuentas.add(cuentas.size(), nueva);
+    String i = String.valueOf(buscarCuenta(nueva.getId()));
+    int index = i.charAt(1)=='1'? Integer.parseInt(i.substring(2)):Integer.parseInt(i.substring(2))+1;
+    cuentas.add(index, nueva);
     return nueva.getId();
   }
 
