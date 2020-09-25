@@ -4,6 +4,7 @@ import java.util.Comparator;
 
 import es.upm.aedlib.indexedlist.IndexedList;
 import es.upm.aedlib.indexedlist.ArrayIndexedList;
+import org.junit.platform.commons.util.StringUtils;
 
 /**
  * Implements the code for the bank application. Implements the client and the
@@ -37,6 +38,8 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
   }
 
   private int buscarCuenta(String id) {
+    if(cuentas.isEmpty())
+      return -100;
     return buscarCuentaAux(0, cuentas.size(), (cuentas.size())/2, id);
   }
 
@@ -102,9 +105,8 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
   @Override
   public String crearCuenta(String dni, int saldoIncial) {
     Cuenta nueva = new Cuenta(dni, saldoIncial);
-    if(cuentas.size()==0){
+    if(cuentas.isEmpty())
       cuentas.add(0, nueva);
-    }
     else {
       String i = String.valueOf(buscarCuenta(nueva.getId()));
       int index = i.charAt(1) == '1' ? Integer.parseInt(i.substring(2)) : Integer.parseInt(i.substring(2)) + 1;
@@ -127,7 +129,7 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
 
   @Override
   public int ingresarDinero(String id, int cantidad) throws CuentaNoExisteExc {
-    int posCuenta = buscarPorId(id);
+    int posCuenta = buscarCuenta(id);
     if (posCuenta<0)
       throw new CuentaNoExisteExc();
 
@@ -137,7 +139,7 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
 
   @Override
   public int retirarDinero(String id, int cantidad) throws CuentaNoExisteExc, InsuficienteSaldoExc {
-    int posCuenta = buscarPorId(id);
+    int posCuenta = buscarCuenta(id);
     if (posCuenta<0)
       throw new CuentaNoExisteExc();
     if (cuentas.get(posCuenta).getSaldo() < cantidad ) {
@@ -151,7 +153,7 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
 
   @Override
   public int consultarSaldo(String id) throws CuentaNoExisteExc {
-    int posCuenta = buscarPorId(id);
+    int posCuenta = buscarCuenta(id);
     if (posCuenta<0){
       throw new CuentaNoExisteExc();
     }
@@ -161,20 +163,54 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
   @Override
   public void hacerTransferencia(String idFrom, String idTo, int cantidad)
       throws CuentaNoExisteExc, InsuficienteSaldoExc {
-    // TODO Auto-generated method stub
-
+    if (!isFormatoValido(idFrom) || !isFormatoValido(idTo))
+      throw new CuentaNoExisteExc();
+    int posFrom = buscarCuenta(idFrom);
+    int posTo = buscarCuenta(idTo);
+    if (posFrom < 0 || posTo < 0)
+      throw new CuentaNoExisteExc();
+    if (cuentas.get(posFrom).getSaldo() < cantidad)
+      throw new InsuficienteSaldoExc();
+    else {
+      cuentas.get(posFrom).retirar(cantidad);
+      cuentas.get(posTo).ingresar(cantidad);
+    }
   }
+
+    private boolean isFormatoValido(String id){
+      return id.contains("/") && id.replace("/", "").matches("[0-9]+");
+    }
 
   @Override
   public IndexedList<String> getIdCuentas(String dni) {
-    // TODO Auto-generated method stub
-    return null;
+    IndexedList<String> idCuentas = new ArrayIndexedList<String>();
+    IndexedList<Cuenta> arrayCuentas = getCuentas(dni);
+    for (int i = 0; i<arrayCuentas.size(); i++){
+      idCuentas.add(idCuentas.size(), arrayCuentas.get(i).getId());
+    }
+    return idCuentas;
+  }
+
+  private IndexedList<Cuenta> getCuentas(String dni) {
+    IndexedList<Cuenta> arrayCuentas = new ArrayIndexedList<Cuenta>();
+    int posCuenta = buscarCuenta(dni+"/0");
+    String i = String.valueOf(posCuenta);
+    if(posCuenta<0)
+        posCuenta = i.charAt(1) == '1' ? Integer.parseInt(i.substring(2)) : Integer.parseInt(i.substring(2)) + 1;
+      while (posCuenta<cuentas.size() && cuentas.get(posCuenta).getDNI().equals(dni)){
+        arrayCuentas.add(arrayCuentas.size(), cuentas.get(posCuenta));
+        posCuenta++;
+      }
+    return arrayCuentas;
   }
 
   @Override
   public int getSaldoCuentas(String dni) {
-    // TODO Auto-generated method stub
-    return 0;
+    IndexedList<Cuenta> arrayCuentas = getCuentas(dni);
+    int saldoCuentas = 0;
+    for(int i = 0; i<arrayCuentas.size(); i++)
+      saldoCuentas+=arrayCuentas.get(i).getSaldo();
+    return saldoCuentas;
   }
 
 }
