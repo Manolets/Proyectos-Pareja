@@ -37,7 +37,7 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
   }
 
   private int buscarCuenta(String id) {
-    return buscarCuentaAux(0, cuentas.size()-1, (cuentas.size()-1)/2, id);
+    return buscarCuentaAux(0, cuentas.size(), (cuentas.size())/2, id);
   }
 
   private void inputCuenta(Cuenta cuenta){
@@ -102,16 +102,21 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
   @Override
   public String crearCuenta(String dni, int saldoIncial) {
     Cuenta nueva = new Cuenta(dni, saldoIncial);
-    String i = String.valueOf(buscarCuenta(nueva.getId()));
-    int index = i.charAt(1)=='1'? Integer.parseInt(i.substring(2)):Integer.parseInt(i.substring(2))+1;
-    cuentas.add(index, nueva);
+    if(cuentas.size()==0){
+      cuentas.add(0, nueva);
+    }
+    else {
+      String i = String.valueOf(buscarCuenta(nueva.getId()));
+      int index = i.charAt(1) == '1' ? Integer.parseInt(i.substring(2)) : Integer.parseInt(i.substring(2)) + 1;
+      cuentas.add(index, nueva);
+    }
     return nueva.getId();
   }
 
   @Override
   public void borrarCuenta(String id) throws CuentaNoExisteExc, CuentaNoVaciaExc {
-    int posCuenta = buscarPorId(id);
-    if (posCuenta == -1)
+    int posCuenta = buscarCuenta(id);
+    if (posCuenta<0)
       throw new CuentaNoExisteExc();
     if (cuentas.get(posCuenta).getSaldo() != 0)
       throw new CuentaNoVaciaExc();
@@ -123,7 +128,7 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
   @Override
   public int ingresarDinero(String id, int cantidad) throws CuentaNoExisteExc {
     int posCuenta = buscarPorId(id);
-    if (posCuenta == -1)
+    if (posCuenta<0)
       throw new CuentaNoExisteExc();
 
     cuentas.get(posCuenta).ingresar(cantidad);
@@ -133,7 +138,7 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
   @Override
   public int retirarDinero(String id, int cantidad) throws CuentaNoExisteExc, InsuficienteSaldoExc {
     int posCuenta = buscarPorId(id);
-    if (posCuenta == -1)
+    if (posCuenta<0)
       throw new CuentaNoExisteExc();
     if (cuentas.get(posCuenta).getSaldo() < cantidad ) {
       throw new InsuficienteSaldoExc();
@@ -147,7 +152,7 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
   @Override
   public int consultarSaldo(String id) throws CuentaNoExisteExc {
     int posCuenta = buscarPorId(id);
-    if (posCuenta == -1){
+    if (posCuenta<0){
       throw new CuentaNoExisteExc();
     }
     return cuentas.get(posCuenta).getSaldo();
