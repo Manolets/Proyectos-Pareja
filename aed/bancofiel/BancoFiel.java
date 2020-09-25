@@ -40,13 +40,18 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
     return buscarCuentaAux(0, cuentas.size()-1, (cuentas.size()-1)/2, id);
   }
 
+  private void inputCuenta(Cuenta cuenta){
+
+  }
+
   private int buscarCuentaAux(int inicio, int end, int mitad, String id) {
     int cmp = compareId(id, cuentas.get(mitad).getId());
+    int signo = cmp>=0? 2 : 1;
 
     if (cmp==0)
       return mitad;
-    else if(mitad==0 || mitad==cuentas.size()-1)
-      return -1;
+    else if(mitad==inicio || mitad==end)
+      return -Integer.parseInt(signo+""+mitad);
     else if(cmp>0)
       inicio++;
     else
