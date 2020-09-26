@@ -4,7 +4,6 @@ import java.util.Comparator;
 
 import es.upm.aedlib.indexedlist.IndexedList;
 import es.upm.aedlib.indexedlist.ArrayIndexedList;
-import org.junit.platform.commons.util.StringUtils;
 
 /**
  * Implements the code for the bank application. Implements the client and the
@@ -23,65 +22,69 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
   // ----------------------------------------------------------------------
   // Anadir metodos aqui ...
 
-  private int buscarPorId(String id) {
-    int count = 0;
-    boolean encontrado = false;
-    while (!encontrado && count < cuentas.size()) {
-      if (cuentas.get(count).getId().equals(id)) {
-        encontrado = true;
-      } else {
-        count++;
-      }
-    }
-
-    return (encontrado) ? count : -1;
-  }
-
   private int buscarCuenta(String id) {
-    if(cuentas.isEmpty())
+    if (cuentas.isEmpty())
       return -100;
-    return buscarCuentaAux(0, cuentas.size(), (cuentas.size())/2, id);
+    return buscarCuentaAux(0, cuentas.size(), (cuentas.size()) / 2, id);
   }
 
-  private void inputCuenta(Cuenta cuenta){
 
-  }
-
+  /**
+   * Implementa el algoritmo de búsqueda binaria. Para casos donde 
+   * el elemento no se encuentra en la lista devuelve -mitad, siendo mitad 
+   * la posición que le corresponde en la lista ordenada
+   * @param inicio
+   * @param end
+   * @param mitad
+   * @param id
+   * @return
+   */
   private int buscarCuentaAux(int inicio, int end, int mitad, String id) {
     int cmp = compareId(id, cuentas.get(mitad).getId());
-    int signo = cmp>=0? 2 : 1;
 
-    if (cmp==0)
+    if (cmp == 0)
       return mitad;
-    else if(mitad==inicio || mitad==end)
-      return -Integer.parseInt(signo+""+mitad);
-    else if(cmp>0)
+    else if (mitad == inicio || mitad == end){
+      mitad = cmp >= 0 ? mitad+1 : mitad;
+      return -mitad;
+    }
+    else if (cmp > 0)
       inicio++;
     else
       end--;
-    return buscarCuentaAux(inicio, end, (end+inicio)/2, id);
+    return buscarCuentaAux(inicio, end, (end + inicio) / 2, id);
 
   }
 
-  private int compareId(String idCuenta1, String idCuenta2){
+  private int compareId(String idCuenta1, String idCuenta2) {
     String[] cuenta1 = idCuenta1.split("/");
     String[] cuenta2 = idCuenta2.split("/");
-    if (Integer.parseInt(cuenta1[0]) - Integer.parseInt(cuenta2[0]) == 0)
-      return Integer.parseInt(cuenta1[1]) - Integer.parseInt(cuenta2[1]);
+    if (cuenta1[0].compareTo(cuenta2[0]) == 0)
+      return cuenta1[1].compareTo(cuenta2[1]);
     else
-      return Integer.parseInt(cuenta1[0]) - Integer.parseInt(cuenta2[0]);
+      return cuenta1[0].compareTo(cuenta2[0]);
+  }
+
+  private boolean isFormatoValido(String id) {
+    return id.contains("/") && id.replace("/", "").matches("[0-9]+");
   }
 
   /**
-   * Swaps the element with the previos one in list
-   * 
-   * @param list
+   * Inserta el elemento en la posición que le corresponde en la lista
+   * @param list    Lista donde insertar
+   * @param cuenta  Elemento a insertar
+   * @param cmp     Criterio de comparación para la ordenación
    */
-  private void swapForPrev(IndexedList<Cuenta> list, int pos) {
-    Cuenta temp = list.get(pos);
-
-    list.set(pos, list.get(pos - 1));
-    list.set(pos - 1, temp);
+  private void insertarOrdenado(IndexedList<Cuenta> list, Cuenta cuenta, Comparator<Cuenta> cmp) {
+    boolean insertado = false;
+    int i = 0;
+    while (!insertado && i < list.size()) {
+      if (cmp.compare(cuenta, list.get(i)) < 0) {
+        insertado = true;
+        list.add(i, cuenta);
+      }
+      i++;
+    }
   }
 
   // ----------------------------------------------------------------------
@@ -92,11 +95,10 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
 
   @Override
   public IndexedList<Cuenta> getCuentasOrdenadas(Comparator<Cuenta> cmp) {
-    IndexedList<Cuenta> ordenadas = this.cuentas;
+    IndexedList<Cuenta> ordenadas = new ArrayIndexedList<Cuenta>();
 
-    for (int i = 1; i < ordenadas.size(); i++) {
-      if (cmp.compare(ordenadas.get(i - 1), ordenadas.get(i)) > 0)
-        swapForPrev(ordenadas, i);
+    for (int i = 0; i < cuentas.size(); i++) {
+      insertarOrdenado(ordenadas, cuentas.get(i), cmp);
     }
 
     return ordenadas;
@@ -105,11 +107,10 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
   @Override
   public String crearCuenta(String dni, int saldoIncial) {
     Cuenta nueva = new Cuenta(dni, saldoIncial);
-    if(cuentas.isEmpty())
+    if (cuentas.isEmpty())
       cuentas.add(0, nueva);
     else {
-      String i = String.valueOf(buscarCuenta(nueva.getId()));
-      int index = i.charAt(1) == '1' ? Integer.parseInt(i.substring(2)) : Integer.parseInt(i.substring(2)) + 1;
+      int index = buscarCuenta(nueva.getId());
       cuentas.add(index, nueva);
     }
     return nueva.getId();
@@ -118,7 +119,7 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
   @Override
   public void borrarCuenta(String id) throws CuentaNoExisteExc, CuentaNoVaciaExc {
     int posCuenta = buscarCuenta(id);
-    if (posCuenta<0)
+    if (posCuenta < 0)
       throw new CuentaNoExisteExc();
     if (cuentas.get(posCuenta).getSaldo() != 0)
       throw new CuentaNoVaciaExc();
@@ -130,7 +131,7 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
   @Override
   public int ingresarDinero(String id, int cantidad) throws CuentaNoExisteExc {
     int posCuenta = buscarCuenta(id);
-    if (posCuenta<0)
+    if (posCuenta < 0)
       throw new CuentaNoExisteExc();
 
     cuentas.get(posCuenta).ingresar(cantidad);
@@ -140,9 +141,9 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
   @Override
   public int retirarDinero(String id, int cantidad) throws CuentaNoExisteExc, InsuficienteSaldoExc {
     int posCuenta = buscarCuenta(id);
-    if (posCuenta<0)
+    if (posCuenta < 0)
       throw new CuentaNoExisteExc();
-    if (cuentas.get(posCuenta).getSaldo() < cantidad ) {
+    if (cuentas.get(posCuenta).getSaldo() < cantidad) {
       throw new InsuficienteSaldoExc();
     } else {
       cuentas.get(posCuenta).retirar(cantidad);
@@ -154,7 +155,7 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
   @Override
   public int consultarSaldo(String id) throws CuentaNoExisteExc {
     int posCuenta = buscarCuenta(id);
-    if (posCuenta<0){
+    if (posCuenta < 0) {
       throw new CuentaNoExisteExc();
     }
     return cuentas.get(posCuenta).getSaldo();
@@ -177,15 +178,11 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
     }
   }
 
-    private boolean isFormatoValido(String id){
-      return id.contains("/") && id.replace("/", "").matches("[0-9]+");
-    }
-
   @Override
   public IndexedList<String> getIdCuentas(String dni) {
     IndexedList<String> idCuentas = new ArrayIndexedList<String>();
     IndexedList<Cuenta> arrayCuentas = getCuentas(dni);
-    for (int i = 0; i<arrayCuentas.size(); i++){
+    for (int i = 0; i < arrayCuentas.size(); i++) {
       idCuentas.add(idCuentas.size(), arrayCuentas.get(i).getId());
     }
     return idCuentas;
@@ -193,14 +190,13 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
 
   private IndexedList<Cuenta> getCuentas(String dni) {
     IndexedList<Cuenta> arrayCuentas = new ArrayIndexedList<Cuenta>();
-    int posCuenta = buscarCuenta(dni+"/0");
-    String i = String.valueOf(posCuenta);
-    if(posCuenta<0)
-        posCuenta = i.charAt(1) == '1' ? Integer.parseInt(i.substring(2)) : Integer.parseInt(i.substring(2)) + 1;
-      while (posCuenta<cuentas.size() && cuentas.get(posCuenta).getDNI().equals(dni)){
-        arrayCuentas.add(arrayCuentas.size(), cuentas.get(posCuenta));
-        posCuenta++;
-      }
+    int posCuenta = buscarCuenta(dni + "/0");
+    if (posCuenta < 0)
+      posCuenta = i.charAt(1) == '1' ? Integer.parseInt(i.substring(2)) : Integer.parseInt(i.substring(2)) + 1;
+    while (posCuenta < cuentas.size() && cuentas.get(posCuenta).getDNI().equals(dni)) {
+      arrayCuentas.add(arrayCuentas.size(), cuentas.get(posCuenta));
+      posCuenta++;
+    }
     return arrayCuentas;
   }
 
@@ -208,8 +204,8 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
   public int getSaldoCuentas(String dni) {
     IndexedList<Cuenta> arrayCuentas = getCuentas(dni);
     int saldoCuentas = 0;
-    for(int i = 0; i<arrayCuentas.size(); i++)
-      saldoCuentas+=arrayCuentas.get(i).getSaldo();
+    for (int i = 0; i < arrayCuentas.size(); i++)
+      saldoCuentas += arrayCuentas.get(i).getSaldo();
     return saldoCuentas;
   }
 
