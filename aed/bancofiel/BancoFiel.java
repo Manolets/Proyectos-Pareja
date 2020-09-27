@@ -234,12 +234,11 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
    */
   private IndexedList<Cuenta> getCuentas(String dni) {
     IndexedList<Cuenta> arrayCuentas = new ArrayIndexedList<Cuenta>();
-    Comparator<Cuenta> cmp = new ComparadorSaldo();
     int posCuenta = buscarCuenta(dni + "/0");
     if (posCuenta < 0)
       posCuenta = -(posCuenta+1);
     while (posCuenta < cuentas.size() && cuentas.get(posCuenta).getDNI().equals(dni)) {
-      insertarOrdenado(arrayCuentas, cuentas.get(posCuenta), cmp);
+      insertarOrdenado(arrayCuentas, cuentas.get(posCuenta), new ComparadorSaldo());
       posCuenta++;
     }
     return arrayCuentas;
