@@ -95,7 +95,8 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
     }
     list.add(i, cuenta);
   }
-
+  // ----------------------------------------------------------------------
+  // Fin de métodos auxiliares
 
   @Override
   public IndexedList<Cuenta> getCuentasOrdenadas(Comparator<Cuenta> cmp) {
@@ -233,11 +234,12 @@ public class BancoFiel implements ClienteBanco, GestorBanco {
    */
   private IndexedList<Cuenta> getCuentas(String dni) {
     IndexedList<Cuenta> arrayCuentas = new ArrayIndexedList<Cuenta>();
+    Comparator<Cuenta> cmp = new ComparadorSaldo();
     int posCuenta = buscarCuenta(dni + "/0");
     if (posCuenta < 0)
       posCuenta = -(posCuenta+1);
     while (posCuenta < cuentas.size() && cuentas.get(posCuenta).getDNI().equals(dni)) {
-      arrayCuentas.add(arrayCuentas.size(), cuentas.get(posCuenta));
+      insertarOrdenado(arrayCuentas, cuentas.get(posCuenta), cmp);
       posCuenta++;
     }
     return arrayCuentas;
