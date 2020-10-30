@@ -60,9 +60,8 @@ import java.util.function.Function;
 @SuppressWarnings({"unused","deprecation"})
 public class TesterLab4 {
 
+  int timeout = 10000;
   
-    
-
   @BeforeAll
   public static void init () 
   {
@@ -89,7 +88,7 @@ public class TesterLab4 {
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TesterCode.resetPrinter() ;
 TestData.initTrace() ;
 TestData.testName = new String("test_01") ;
@@ -128,7 +127,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -196,7 +195,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -256,7 +255,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -320,7 +319,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -380,7 +379,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -524,7 +523,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -572,7 +571,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -652,7 +651,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -700,7 +699,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -768,7 +767,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -860,7 +859,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -956,7 +955,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -1016,7 +1015,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -1108,7 +1107,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -1160,7 +1159,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -1208,7 +1207,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -1356,7 +1355,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -1428,7 +1427,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -1504,7 +1503,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -1588,7 +1587,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -1652,7 +1651,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -1736,7 +1735,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -1788,7 +1787,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -1892,7 +1891,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -1988,7 +1987,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -2040,7 +2039,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -2152,7 +2151,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -2240,7 +2239,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -2292,7 +2291,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -2444,7 +2443,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -2524,7 +2523,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -2660,7 +2659,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -2728,7 +2727,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -2784,7 +2783,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -2832,7 +2831,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -2924,7 +2923,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -3024,7 +3023,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -3116,7 +3115,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -3220,7 +3219,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -3280,7 +3279,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -3332,7 +3331,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -3420,7 +3419,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -3488,7 +3487,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -3568,7 +3567,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -3628,7 +3627,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -3724,7 +3723,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -3840,7 +3839,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -3956,7 +3955,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -4024,7 +4023,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -4072,7 +4071,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -4140,7 +4139,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -4212,7 +4211,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(20), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Cache<Integer,String>,Void> v_0 = null ;
 Cache<Integer,String> v_1 = null ;
 TesterCode.resetPrinter() ;

@@ -1,7 +1,6 @@
 package aed.cache;
 
 import es.upm.aedlib.Entry;
-import es.upm.aedlib.map.Map;
 import es.upm.aedlib.map.HashTableMap;
 
 
