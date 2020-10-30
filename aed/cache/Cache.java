@@ -35,22 +35,17 @@ public class Cache<Key, Value> {
     boolean isInList = false;
     Position<Key> pointer = keyListLRU.first();
     while (pointer != null && !isInList) {
-      if (pointer.element().equals(key)) {
-        isInList = true;
+      isInList = pointer.element().equals(key);
+      if (isInList)
         keyListLRU.remove(pointer);
-      } else {
+      else
         pointer = keyListLRU.next(pointer);
-      }
     }
-
     keyListLRU.addFirst(key);
-
     if (keyListLRU.size() > maxCacheSize) {
       CacheCell<Key, Value> element = cacheContents.get(keyListLRU.last().element());
-      if (element.getDirty()) {
+      if (element.getDirty())
         mainMemory.write(element.getPos().element(), element.getValue());
-      }
-
       cacheContents.remove(element.getPos().element());
       keyListLRU.remove(keyListLRU.last());
     }
@@ -61,13 +56,11 @@ public class Cache<Key, Value> {
     Value value = mainMemory.read(key);
     if (value == null)
       return null;
-
     boolean isDirty = false;
     if (cacheContents.containsKey(key)) {
       value = cacheContents.get(key).getValue();
       isDirty = cacheContents.get(key).getDirty();
     }
-
     updateKeyList(key);
     CacheCell<Key, Value> res = this.cacheContents.get(key);
     if (res == null || res.getPos().element() == null) {
