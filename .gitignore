@@ -1,4 +1,6 @@
 .vscode
 .dist
-aed/recursion
-aed/multisets
+.idea
+Proyectos-Pareja.iml
+out
+pid
