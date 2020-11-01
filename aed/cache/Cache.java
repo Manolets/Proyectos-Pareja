@@ -53,14 +53,12 @@ public class Cache<Key, Value> {
 
   // Devuelve el valor que corresponde a una clave "Key"
   public Value get(Key key) {
-    Value value = mainMemory.read(key);
+    boolean containsKey = cacheContents.containsKey(key);
+    Value value = (containsKey)? cacheContents.get(key).getValue(): mainMemory.read(key);
     if (value == null)
       return null;
-    boolean isDirty = false;
-    if (cacheContents.containsKey(key)) {
-      value = cacheContents.get(key).getValue();
-      isDirty = cacheContents.get(key).getDirty();
-    }
+    boolean isDirty = (containsKey)?cacheContents.get(key).getDirty():false;
+
     updateKeyList(key);
     CacheCell<Key, Value> res = this.cacheContents.get(key);
     if (res == null || res.getPos().element() == null) {
@@ -73,8 +71,7 @@ public class Cache<Key, Value> {
   // Establece un valor nuevo para la clave en la memoria cache
   public void put(Key key, Value value) {
     updateKeyList(key);
-    CacheCell<Key, Value> cell = new CacheCell<Key, Value>(value, false, keyListLRU.first());
-    cell.setDirty(true);
+    CacheCell<Key, Value> cell = new CacheCell<Key, Value>(value, true, keyListLRU.first());
     cacheContents.put(key, cell);
   }
 
