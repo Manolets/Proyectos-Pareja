@@ -64,7 +64,7 @@ import java.util.stream.Stream;
 @SuppressWarnings({"unused","deprecation"})
 public class TesterLab7 {
 
-  
+  int timeout = 10000;
     
 
   @BeforeAll
@@ -93,7 +93,7 @@ public class TesterLab7 {
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TesterCode.resetPrinter() ;
 TestData.initTrace() ;
 TestData.testName = new String("test_01") ;
@@ -132,7 +132,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -180,7 +180,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -228,7 +228,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -276,7 +276,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -324,7 +324,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -374,7 +374,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -424,7 +424,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -474,7 +474,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -524,7 +524,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -574,7 +574,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -633,7 +633,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -692,7 +692,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -751,7 +751,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -812,7 +812,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -873,7 +873,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -934,7 +934,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -995,7 +995,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -1056,7 +1056,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -1117,7 +1117,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -1178,7 +1178,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -1239,7 +1239,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -1300,7 +1300,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -1361,7 +1361,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -1422,7 +1422,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -1483,7 +1483,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -1544,7 +1544,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -1605,7 +1605,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -1666,7 +1666,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -1727,7 +1727,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -1788,7 +1788,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -1849,7 +1849,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -1910,7 +1910,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -1971,7 +1971,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -2032,7 +2032,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -2093,7 +2093,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -2154,7 +2154,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -2215,7 +2215,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -2276,7 +2276,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -2337,7 +2337,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -2398,7 +2398,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -2459,7 +2459,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -2520,7 +2520,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -2581,7 +2581,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -2642,7 +2642,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -2703,7 +2703,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -2764,7 +2764,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -2825,7 +2825,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -2886,7 +2886,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -2947,7 +2947,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -3008,7 +3008,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -3069,7 +3069,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -3130,7 +3130,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -3191,7 +3191,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -3252,7 +3252,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -3313,7 +3313,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -3374,7 +3374,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -3435,7 +3435,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -3496,7 +3496,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -3557,7 +3557,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -3618,7 +3618,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TesterCode.resetPrinter() ;
 TestData.initTrace() ;
 TestData.testName = new String("test_61") ;
@@ -3657,7 +3657,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TesterCode.resetPrinter() ;
@@ -3705,7 +3705,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -3764,7 +3764,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -3823,7 +3823,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -3882,7 +3882,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -3941,7 +3941,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -4000,7 +4000,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -4059,7 +4059,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
@@ -4118,7 +4118,7 @@ return ok_sofar ;
     boolean resultIs = true ;
     try
     {
-      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(10), ()  -> {
+      resultIs = Assertions.assertTimeoutPreemptively(Duration.ofSeconds(timeout), ()  -> {
 TestResult<Delivery<String>,Void> v_0 = null ;
 Delivery<String> v_1 = null ;
 TestResult<es.upm.aedlib.positionlist.PositionList<Vertex<String>>,es.upm.aedlib.Pair<es.upm.aedlib.Pair<String[],Integer[][]>,Boolean>> v_2 = null ;
