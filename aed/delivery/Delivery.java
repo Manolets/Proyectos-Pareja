@@ -1,5 +1,6 @@
 package aed.delivery;
 
+import es.upm.aedlib.Position;
 import es.upm.aedlib.graph.Edge;
 import es.upm.aedlib.positionlist.NodePositionList;
 import es.upm.aedlib.positionlist.PositionList;
@@ -8,6 +9,8 @@ import es.upm.aedlib.graph.DirectedGraph;
 import es.upm.aedlib.graph.Vertex;
 import es.upm.aedlib.indexedlist.ArrayIndexedList;
 import es.upm.aedlib.indexedlist.IndexedList;
+
+import javax.swing.text.html.HTMLDocument;
 
 public class Delivery<V> {
 
@@ -48,20 +51,18 @@ public class Delivery<V> {
 
   public int length(PositionList<Vertex<V>> path) {
     int length = 0;
-    if(!path.isEmpty())
-      length = length(path, 0);
-    return length;
-  }
-
-  private int length(PositionList<Vertex<V>> path, int sofar) {
-    if (path.isEmpty())
-      return sofar;
-    for(Edge<Integer> e : graph.outgoingEdges(path.first().element())){
-      if (graph.endVertex(e).equals(path.next(path.first())))
-        sofar+=e.element();
+    if(!path.isEmpty()){
+      Position<Vertex<V>> cursor = path.first();
+      while(!cursor.equals(path.last())) {
+        Iterable<Edge<Integer>> edges = graph.outgoingEdges(cursor.element());
+        for (Edge<Integer> edge : edges) {
+          if (graph.endVertex(edge).equals(path.next(cursor).element()))
+            length = edge.element() + length;
+        }
+        cursor = path.next(cursor);
+      }
     }
-    path.remove(path.first());
-    return length(path, sofar);
+    return length;
   }
 
   public String toString() {
