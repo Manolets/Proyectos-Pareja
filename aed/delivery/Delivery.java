@@ -11,6 +11,7 @@ import es.upm.aedlib.indexedlist.ArrayIndexedList;
 import es.upm.aedlib.indexedlist.IndexedList;
 
 import javax.swing.text.html.HTMLDocument;
+import java.util.Iterator;
 
 public class Delivery<V> {
 
@@ -23,16 +24,19 @@ public class Delivery<V> {
   // number represents distance between nodes.
   public Delivery(V[] places, Integer[][] gmat) {
     graph = new DirectedAdjacencyListGraph<>();
-    verteces = new ArrayIndexedList<>();
-    for (V place : places) {
-      verteces.add(verteces.size(), graph.insertVertex(place));
-    }
 
-    for (int i = 0; i < gmat.length; i++) {
-      for (int j = 0; j < gmat[i].length; j++) {
-        if (gmat[i][j] != null)
-          graph.insertDirectedEdge(verteces.get(i), verteces.get(j), gmat[i][j]);
-      }
+      for (V place : places)
+        graph.insertVertex(place);
+
+      Iterator<Vertex<V>> iteratori = graph.vertices().iterator();
+      for (int i = 0; iteratori.hasNext() && i < gmat.length; i++) {
+        Vertex<V> v = iteratori.next();
+        Iterator<Vertex<V>> iteratorj = graph.vertices().iterator();
+        for (int j = 0; iteratorj.hasNext() && j < gmat[i].length; j++) {
+          Vertex<V> u = iteratorj.next();
+          if (gmat[i][j] != null)
+            graph.insertDirectedEdge(v, u, gmat[i][j]);
+        }
     }
 
   }
