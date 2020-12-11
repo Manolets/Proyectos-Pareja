@@ -72,7 +72,22 @@ public class Delivery<V> {
   }
 
   public int length(PositionList<Vertex<V>> path) {
-    return 0;
+    int length = 0;
+    if(!path.isEmpty())
+      length = length(path, 0);
+    return length;
+  }
+
+  private int length(PositionList<Vertex<V>> path, int sofar) {
+    if (path.isEmpty())
+      return sofar;
+    for(Edge<Integer> e : graph.outgoingEdges(path.first().element())){
+      if (graph.endVertex(e).equals(path.next(path.first())))
+        sofar+=e.element();
+    }
+    path.remove(path.first());
+    return length(path, sofar);
+
   }
 
   public String toString() {
