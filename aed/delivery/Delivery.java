@@ -57,7 +57,7 @@ public class Delivery<V> {
     if (path.isEmpty())
       return sofar;
     for(Edge<Integer> e : graph.outgoingEdges(path.first().element())){
-      if (graph.endVertex(e).equals(path.next(path.first())))
+      if (graph.endVertex(e).equals(path.next(path.first()).element()))
         sofar+=e.element();
     }
     path.remove(path.first());
